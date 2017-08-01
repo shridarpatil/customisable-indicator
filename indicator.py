@@ -1,8 +1,6 @@
 #!/bin/env python
 # -*- coding: utf-8 -*-
 """Indicator."""
-# This code is an example for a tutorial on Ubuntu Unity/Gnome AppIndicators:
-# http://candidtim.github.io/appindicator/2014/09/13/ubuntu-appindicator-step-by-step.html
 
 import os
 import subprocess
