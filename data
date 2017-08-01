@@ -1,14 +1,1 @@
-[
-    {
-        "command": "ping google.com", 
-        "menu": "ping"
-    }, 
-    {
-        "command": "ping google.com", 
-        "menu": "ping"
-    }, 
-    {
-        "command": "ping google.com", 
-        "menu": "ping"
-    }
-]
+
