@@ -80,14 +80,14 @@ class DialogWindow(Gtk.Window):
         json_data = {"menu": menu, "command": command}
 
         try:
-            with open('data') as outfile:
+            with open('data', 'a+') as outfile:
                 data = json.load(outfile)
         except ValueError as e:
             print(e)
             data = []
             pass
         data.append(json_data)
-        with open('data', 'w') as outfile:
+        with open('data', 'a+') as outfile:
             json.dump(
                 data, outfile, sort_keys=True,
                 indent=4, ensure_ascii=False

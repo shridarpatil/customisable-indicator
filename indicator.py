@@ -73,7 +73,7 @@ def build_menu(downloads=None):
 
     try:
 
-        with open('data') as outfile:
+        with open('data', 'a+') as outfile:
                 menu_items = json.load(outfile)
 
     except ValueError as e:
