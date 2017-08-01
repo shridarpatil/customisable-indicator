@@ -81,10 +81,10 @@ def build_menu(downloads=None):
         pass
     else:
         for menu_item in menu_items:
-            item_download = Gtk.MenuItem(menu_item['menu'])
-            item_download.connect('activate', create_command)
-            menu.append(item_download)
-            item_download.show()
+            new_item = Gtk.MenuItem(menu_item['menu'])
+            new_item.connect('activate', create_command)
+            menu.append(new_item)
+            new_item.show()
 
     menu_sep = Gtk.SeparatorMenuItem()
     menu.append(menu_sep)

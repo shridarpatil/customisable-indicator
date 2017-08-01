@@ -2,3 +2,4 @@
 tox.ini
 *.pyc
 samples
+data
