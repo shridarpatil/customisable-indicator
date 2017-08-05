@@ -63,7 +63,7 @@ def build_menu(downloads=None):
     menu.append(item_joke)
 
     bench = Gtk.MenuItem('Create Menu')
-    bench.connect('activate', bench_start)
+    bench.connect('activate', create_menu)
     menu.append(bench)
 
     item_download = Gtk.MenuItem("downloads")
@@ -139,7 +139,7 @@ def joke(_):
     Notify.Notification.new("<b>Joke</b>", fetch_joke(), None).show()
 
 
-def bench_start(_):
+def create_menu(_):
     """Start frappe bench."""
     win = DialogWindow()
     win.show_all()

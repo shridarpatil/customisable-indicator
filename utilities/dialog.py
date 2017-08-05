@@ -7,7 +7,7 @@ from gi.repository import Gtk
 class Dialog(Gtk.Dialog):
     """Dialog."""
 
-    def __init__(self, parent):
+    def __init__(self, parent, menu, command):
         """Init."""
         Gtk.Dialog.__init__(self, "My Dialog", parent, 0,
             (
@@ -18,7 +18,11 @@ class Dialog(Gtk.Dialog):
 
         self.set_default_size(150, 100)
 
-        label = Gtk.Label("This is a dialog to display additional information")
+        message = """  New menu item will be created with :
+  Item Name: "{0}"
+  Command: "{1}"
+        """.format(menu, command)
+        label = Gtk.Label(message)
 
         box = self.get_content_area()
         box.add(label)
@@ -57,11 +61,11 @@ class DialogWindow(Gtk.Window):
 
     def save(self, widget):
         """-."""
-        dialog = Dialog(self)
-        response = dialog.run()
-
         menu = self.menu_name.get_text()
         command = self.command.get_text()
+
+        dialog = Dialog(self, menu, command)
+        response = dialog.run()
 
         if response == Gtk.ResponseType.OK:
             print("The OK button was clicked")
@@ -87,7 +91,7 @@ class DialogWindow(Gtk.Window):
             data = []
             pass
         data.append(json_data)
-        with open('data', 'a+') as outfile:
+        with open('data', 'w+') as outfile:
             json.dump(
                 data, outfile, sort_keys=True,
                 indent=4, ensure_ascii=False
